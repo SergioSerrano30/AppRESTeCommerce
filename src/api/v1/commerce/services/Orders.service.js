@@ -15,8 +15,6 @@ export const getOrdersList = async () => {
 //Eq1: GET Orders Item
 export const getOrdersItem = async (id, keyType) => {
   let ordersItem;
-  console.log("--------------------------> "+id);
-  console.log("--------------------------> "+keyType);
   try{
     if(keyType === 'OK'){
       ordersItem = await Orders.findOne({

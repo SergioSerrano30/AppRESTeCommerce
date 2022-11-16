@@ -8,7 +8,7 @@ import config from './config/config';
 
 //FIC: imports Routes
 import routeAPIeSecurity from './api/v1/security/routes/index';
-import routeAPIeEducation from './api/v1/education/routes/index';
+// import routeAPIeEducation from './api/v1/education/routes/index';
 import routeAPIeCommerce from './api/v1/commerce/routes/index';
 
 //FIC: imports Middlewares
@@ -49,7 +49,7 @@ app.get('/DrFIC', (req,res)=>{
 })
 // Routes
 routeAPIeSecurity(app);
-routeAPIeEducation(app);
+// routeAPIeEducation(app);
 routeAPIeCommerce(app);
 
 
