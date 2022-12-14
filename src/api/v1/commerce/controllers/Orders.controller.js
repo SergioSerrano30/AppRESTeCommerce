@@ -17,7 +17,7 @@ export const getOrdersList = async (req, res, next) => {
 
 //Eq1: Una sola Orden.
 export const getOrdersItem = async (req, res, next) => {
-  try {
+  try { 
     const  id  = req.params.id;
     const  type  = req.params.type;
     // const keyType = req.query.keyType || "OK" || "BK";
