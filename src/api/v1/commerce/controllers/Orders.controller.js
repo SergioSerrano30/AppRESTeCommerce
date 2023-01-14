@@ -18,44 +18,71 @@ export const getOrdersList = async (req, res, next) => {
 //Eq1: Una sola Orden.
 export const getOrdersItem = async (req, res, next) => {
   try { 
-    const  id  = req.params.id;
-    const  type  = req.params.type;
-    // const keyType = req.query.keyType || "OK" || "BK";
-    if(type == "OK"){
-      const ordersItem = await OrdersService.getOrdersItem(id, type);
-    
-      if (!ordersItem) {
-        throw boom.notFound("¡No se encontraron Ordenes registradas!");
-      } else if (ordersItem) {
-        res.status(200).json(ordersItem);
-      }
+    const { id } = req.params;
+    const keyType = req._parsedUrl.query || "OK";
+    const ordersItem = await OrdersService.getOrdersItem(id, keyType);
+    //console.log(req);
+    // console.log(keyType);
+    // console.log(id);
+    if (!ordersItem) {
+      throw boom.notFound("¡No se encontraron Ordenes registradas!");
+    } else if (ordersItem) {
+      res.status(200).json(ordersItem);
     }
-    else if(type == "BK"){
-      const ordersItem = await OrdersService.getOrdersItem(id, type);
-    
-      if (!ordersItem) {
-        throw boom.notFound("¡No se encontraron Ordenes registradas!");
-      } else if (ordersItem) {
-        res.status(200).json(ordersItem);
-      }
-    }
-    else if(type == "Des"){
-      const ordersItem = await OrdersService.getOrdersItem(id, type);
-      if (!ordersItem) {
-        throw boom.notFound("¡No se encontraron ordenes registradas!");
-      } else if (ordersItem) {
-        res.status(200).json(ordersItem);
-      }
-    }
-    else{
-      res.status(200).json([]);
-    }
-
   } catch (error) {
     console.log(error);
     next(error);
   }
 };
+
+// export const getOrdersItem = async (req, res, next) => {
+//   try { 
+//     const  id  = req.params.id;
+//     const  type  = req.params.type;
+//     // const keyType = req.query.keyType || "OK" || "BK";
+//     if(type == "OK"){
+//       const ordersItem = await OrdersService.getOrdersItem(id, type);
+    
+//       if (!ordersItem) {
+//         throw boom.notFound("¡No se encontraron Ordenes registradas!");
+//       } else if (ordersItem) {
+//         res.status(200).json(ordersItem);
+//       }
+//     }
+//     else if(type == "BK"){
+//       const ordersItem = await OrdersService.getOrdersItem(id, type);
+    
+//       if (!ordersItem) {
+//         throw boom.notFound("¡No se encontraron Ordenes registradas!");
+//       } else if (ordersItem) {
+//         res.status(200).json(ordersItem);
+//       }
+//     }
+//     else if(type == "Des"){
+//       const ordersItem = await OrdersService.getOrdersItem(id, type);
+//       if (!ordersItem) {
+//         throw boom.notFound("¡No se encontraron ordenes registradas!");
+//       } else if (ordersItem) {
+//         res.status(200).json(ordersItem);
+//       }
+//     }
+//     else if(type == "Carrito"){
+//       const ordersItem = await OrdersService.getOrdersItem(id, type);
+//       if (!ordersItem) {
+//         throw boom.notFound("¡No se encontraron ordenes registradas en carrito!");
+//       } else if (ordersItem) {
+//         res.status(200).json(ordersItem);
+//       }
+//     }
+//     else{
+//       res.status(200).json([]);
+//     }
+
+//   } catch (error) {
+//     console.log(error);
+//     next(error);
+//   }
+// };
 
 //API POST (ADD) Orders.
 export const postOrdersItem = async (req, res, next) => {
@@ -78,9 +105,11 @@ export const putOrdersItem = async (req, res, next) => {
 	try {
 		const { id } = req.params;
 		const puOrdersItem = req.body;
+    //console.log(id)
+    //console.log(puOrdersItem)
 		const updatedOrdersItem = await OrdersService.putOrdersItem(id, puOrdersItem );
 		if (!updatedOrdersItem) {
-			throw boom.badRequest('¡No se pudo actualizar la Orden!');
+			throw boom.badRequest('¡No se pudo actualizar la Orden! :c');
 		} else if (updatedOrdersItem) {
 			res.status(200).json(updatedOrdersItem);
 		}

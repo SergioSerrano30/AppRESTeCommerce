@@ -4,12 +4,13 @@ import { Router } from 'express';
 
 const router = Router(); 
 
-
+ 
 //AQUI VAN LOS LLAMADOS A LOS CONTROLADORES DE LAS APIS
 //Eq1: GET Orders LIST
 router.get('/', OrdersController.getOrdersList);
 //Eq1: GET Orders ITEM
-router.get('/:type/:id', OrdersController.getOrdersItem);
+// router.get('/:type/:id', OrdersController.getOrdersItem);
+router.get('/:id', OrdersController.getOrdersItem);
 // //Eq1: POST (ADD) Orders ITEM
 router.post('/', OrdersController.postOrdersItem);
 // //Eq1: PUT (UPDATE) Orders ITEM

@@ -4,7 +4,6 @@ import obtenerConexion from '../../../../config/connectionsFactory';
 import obtenerModelo from '../../../../config/modelsFactory';
 
 const ordersSchema = new mongoose.Schema({
-    
     IdOrdenOK           :{ type : String, required : true },
     IdOrdenBK           :{ type : String },
     IdTipoOrdenOK       :{ type : String },
@@ -24,7 +23,7 @@ const ordersSchema = new mongoose.Schema({
                 detail_row_reg : [
                     {
                         _id : false,
-                        FechaReg    : { type : Date, default : Date.now() },
+                        FechaReg    : { type : Date, default : new Date() },
                         UsuarioReg  : { type : String }
                     }
                 ]
@@ -47,7 +46,7 @@ const ordersSchema = new mongoose.Schema({
                 detail_row_reg : [
                     {
                         _id : false,
-                        FechaReg    : { type : Date, default : Date.now() },
+                        FechaReg    : { type : Date, default : new Date() },
                         UsuarioReg  : { type : String }
                     }
                 ]
@@ -80,7 +79,7 @@ const ordersSchema = new mongoose.Schema({
                         detail_row_reg : [
                             {
                                 _id : false,
-                                FechaReg    : { type : Date, default : Date.now() },
+                                FechaReg    : { type : Date, default : new Date() },
                                 UsuarioReg  : { type : String }
                             }
                         ]
@@ -104,7 +103,7 @@ const ordersSchema = new mongoose.Schema({
                 detail_row_reg : [
                     {
                         _id : false,
-                        FechaReg    : { type : Date, default : Date.now() },
+                        FechaReg    : { type : Date, default : new Date() },
                         UsuarioReg  : { type : String }
                     }
                 ]
@@ -134,7 +133,7 @@ const ordersSchema = new mongoose.Schema({
                         detail_row_reg : [
                             {
                                 _id : false,
-                                FechaReg    : { type : Date, default : Date.now() },
+                                FechaReg    : { type : Date, default : new Date() },
                                 UsuarioReg  : { type : String }
                             }
                         ]
@@ -150,7 +149,7 @@ const ordersSchema = new mongoose.Schema({
         detail_row_reg : [
             {
                 _id : false,
-                FechaReg    : { type : Date, default : Date.now() },
+                FechaReg    : { type : Date, default : new Date() },
                 UsuarioReg  : { type : String }
             }
         ]

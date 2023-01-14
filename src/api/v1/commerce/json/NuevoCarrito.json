@@ -1,0 +1,56 @@
+{
+    "IdOrdenOK": "SERG-102-2",
+    "IdOrdenBK": "18401083",
+    "IdTipoOrdenOK": "?-?",
+    "TipoOrden": "Venta",
+    "IdRolOK": "?-?",
+    "IdPersonaOK": "",
+    "cat_ordenes_estatus": [
+        {
+            "IdEstatusOK": "?-2",
+            "Estatus": "Carrito",
+            "Actual": "S",
+            "Observacion": "",
+            "detail_row": {
+                "Activo": "S",
+                "Borrado": "N",
+                "detail_row_reg": [
+                    {
+                        "FechaReg": "2023-01-11T03:59:01.263Z",
+                        "UsuarioReg": "SERGIO"
+                    }
+                ]
+            }
+        }
+    ],
+    "ordenes_info_ad": [
+        {
+            "IdEtiquetaOK": "IDDESORDEN",
+            "Etiqueta": "Descripción",
+            "Valor": "Orden de Venta",
+            "IdSeccionOK": "?-1",
+            "Seccion": "Principal",
+            "Secuencia": 10,
+            "detail_row": {
+                "Activo": "S",
+                "Borrado": "N",
+                "detail_row_reg": [
+                    {
+                        "FechaReg": "2023-01-11T03:59:01.263Z",
+                        "UsuarioReg": "SERGIO"
+                    }
+                ]
+            }
+        }
+    ],
+    "detail_row": {
+        "Activo": "S",
+        "Borrado": "N",
+        "detail_row_reg": [
+            {
+                "FechaReg": "2023-01-11T03:59:01.263Z",
+                "UsuarioReg": "SERGIO"
+            }
+        ]
+    }
+}

@@ -17,7 +17,7 @@ export const getPricesList = async (req, res, next) => {
 
 
 export const getPricesItem = async (req, res, next) => {
-  try {
+  try { 
     const { id } = req.params;
     const keyType = req.query.keyType || "OK";
     const pricesItem = await PricesListService.getPricesItem(id, keyType);
